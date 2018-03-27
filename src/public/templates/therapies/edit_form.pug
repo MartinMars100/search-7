@@ -1,0 +1,40 @@
+div
+  label(for="therName") Therapy Name:
+  input(type="text" id="therName" name="therName" value=therapy.therName)
+div
+  label(for="therStreet") Address:
+  input(type="text" id="therStreet" name="therStreet", value=therapy.therStreet)
+div
+  label(for="therCity") City:
+  input(type="text" id="therCity" name="therCity", value=therapy.therCity)
+div
+  label(for="therState") State:
+  input(type="text" id="therState" name="therState", value=therapy.therState)
+div
+  label(for="therImage1") Image 1:
+  input(type="text" id="therImage1" name="therImage1", value=therapy.therImage1 )
+div
+  label(for="therImage2") Image 2:
+  input(type="text" id="therImage2" name="therImage2", value=therapy.therImage2 )
+div
+  label(for="therImage3") Image 3:
+  input(type="text" id="therImage3" name="therImage3", value=therapy.therImage3 )
+div
+  label(for="therSvc1") Service 1:
+  input(type="text" id="therSvc1" name="therSvc1", value=therapy.therSvc1 )
+div
+  label(for="therSvc2") Service 2:
+  input(type="text" id="therSvc2" name="therSvc2", value=therapy.therSvc2 )
+div
+  label(for="therSvc3") Service 3:
+  input(type="text" id="therSvc3" name="therSvc3", value=therapy.therSvc3 )
+div
+  label( for="therAbout" ) About:
+div
+  textarea(id="therAbout" rows="3" name='therAbout') #{therapy.therAbout}
+div
+  label(for="therDeals") Discounts and Deals:
+div
+  textarea(id="therDeals" rows="3" name='therDeals') #{therapy.therDeals}
+
+input(type='submit' id="submit" value="Update Therapy")

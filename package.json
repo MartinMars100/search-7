@@ -1,0 +1,36 @@
+{
+  "name": "search-8",
+  "version": "1.0.0",
+  "description": "Treehouse Techdegree Project 12 - Capstone Project The app features an index page of body therapies in the North Charlotte Area. The app features an Express Server, Node.JS, Mongo DB, and Bootstrap CSS. The app will be hosted on the Heroku Site. From the index page a detail link can be clicked to see more details about the therapy. The app features a log in which authenticates through Facebook. The app features a way to add, modify and delete user and therapy data by an administrator. The Therapy List and User List (which link to edit pages) are only displayed for user's that are logged in who have admin rights set to true. Logged in users and admin users are tracked using req.session data. All log in and signup links go to facebook for facebook authentication. I don't allow for any email or user name changes. User name and email come from Facebook and are not changed. Only user admin rights can be changed. The app shows a Twitter page which shows the last 5 tweets from the Search Therapy Twitter Page. See instructions for running app below.",
+  "main": "app.js",
+  "scripts": {
+    "start": "FACEBOOK_APP_ID=134327260597820 FACEBOOK_APP_SECRET=6251f88edd21f5abac0f2ad9c1b9a25c NODE_ENV=development TWIT_ACCESS_TOKEN=833708926243856385-1rDr0KSINUgFt32XrUctS1DR7p5D0cq TWIT_ACCESS_TOKEN_SECRET=IyGrhGEOKBQL0TdSASOlJZATWaz9G19LRRZJPFMWIWzFB  TWIT_CONSUMER_KEY=YT3otLdOPn0V2SMiHbT44QhFU  TWIT_CONSUMER_SECRET=6r6F5uXo5c7GPGSd1KEg5dSErWP5xkac5JHQVs2JjOsx2OmX4v  node app.js",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinMars100/search-7.git"
+  },
+  "engines": {
+    "node": "8.9.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinMars100/search-7/issues"
+  },
+  "homepage": "https://github.com/MartinMars100/search-7#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-mongo": "^2.0.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
+    "mongoose": "^4.13.9",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "pug": "^2.0.0-rc.4",
+    "twit": "^2.2.9"
+  }
+}

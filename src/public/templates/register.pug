@@ -1,0 +1,13 @@
+extends ./partials/head
+
+block content
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        h2#titleHead #{title}
+        
+        include errors
+        
+        // register form
+        form(action="/auth/login/facebook")
+          button.btn.btn-primary(type='submit') Sign up through Facebook

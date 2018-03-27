@@ -1,0 +1,11 @@
+extends ./partials/head
+
+block content
+  .container.clearfix
+      include errors
+      
+      if(currentUser)
+        image.avatarProfile.img-circle.hidden-xs-down(src=user.photo alt='static/img/avatar.png' )
+        #profileHead #{user.name} 
+        #profileEmail #{user.email}
+          

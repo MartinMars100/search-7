@@ -1,0 +1,23 @@
+extends ./partials/head
+
+block content
+  .jumbotron.jumbotron-fluid.bg-info.text-black
+    .container.text-sm-center.pt-3
+      h1.display-2 Search Therapy
+      h2.lead Find Body Therapy in the Lake Norman Area.
+  // /jumbotron
+  .padding-wrapper
+    .row
+      .col-md-12.services-wrap
+        .therapy-services-card
+          img.avatar.img-circle.hidden-xs-down(src='/static/img/twitter.bird.jpg') 
+          a.btn#tweetHash @SearchTherapy
+          h1#tweetHead1 Recent Tweets
+          each tweet in tweets
+            li#tweetDate #{tweet.created_at.slice(0,11)} 
+              h4#tweetText #{tweet.text}
+       
+  script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb', crossorigin='anonymous')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn', crossorigin='anonymous')
+  

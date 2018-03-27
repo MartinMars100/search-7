@@ -1,0 +1,32 @@
+[
+    {"therName": "Cat Therapy",
+     "therStreet": "1212 Main St",
+     "therCity": "Davidson",
+     "therState": "North Carolina",
+     "therImage1": "aaa"
+    },
+    {"therName": "Pilates Therapy",
+     "therStreet": "824 Stewie Lane",
+     "therCity": "Davidson",
+     "therState": "North Carolina",
+     "therImage1": "aaa"
+    },
+    {"therName": "Camping Therapy",
+     "therStreet": "1111 Thomas Street",
+     "therCity": "Charlotte",
+     "therState": "North Carolina",
+     "therImage1": "aaa"
+    },
+    {"therName": "Baseball Game Therapy",
+     "therStreet": "12 Winston Avenue",
+     "therCity": "Raleigh",
+     "therState": "North Carolina",
+     "therImage1": "aaa"
+    },
+    {"therName": "Jump Therapy",
+     "therStreet": "3322 MLK Blvd",
+     "therCity": "Durham",
+     "therState": "North Carolina",
+     "therImage1": "aaa"
+    }
+]

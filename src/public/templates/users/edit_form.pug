@@ -1,0 +1,12 @@
+div
+  h2 User Name: #{user.name}
+div
+  h2 User Email: #{user.email}
+div
+  label Administrator:
+  input(type='radio' checked= user.admin===true value= 'true' name='userAdmin')
+  label(for='userAdmin') True
+  input(type='radio' checked= user.admin===false value= 'false' name='userAdmin')
+  label(for='userAdmin') False
+
+input(type="submit", value="Update User")

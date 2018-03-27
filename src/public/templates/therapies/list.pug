@@ -1,0 +1,30 @@
+extends ../partials/head
+
+block content
+  .container
+    h2#titleHead #{title} 
+    .add
+      a(href='/therapies/new') + Add a New Therapy
+    .list.grid-12
+      table
+        thead
+          tr
+            th Therapy Name
+            th Street Address
+            th City
+            th State
+          tbody
+            each therapy in therapies
+              tr
+                td
+                  a(href='/therapies/' + therapy.id + '/edit') #{therapy.therName}
+                td#tableData #{therapy.therStreet}
+                td#tableData #{therapy.therCity}
+                td#tableData #{therapy.therState}
+                td
+                  a.button(href='/therapies/' + therapy.id + '/remove') Remove Therapy
+  
+      script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb', crossorigin='anonymous')
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn', crossorigin='anonymous')
+      

@@ -1,0 +1,53 @@
+extends ../partials/detailHead
+
+block content
+  .jumbotron.jumbotron-fluid.bg-info.text-black
+    .container
+      #about.row
+        .col-sm-4.mb-3.mr-5
+          img.img-thumbnail(src='/static/img/' + therapy.therImage1)
+        .col.sm-8
+          h1.therapy-name #{therapy.therName}
+          h1.therapy-street #{therapy.therStreet}
+          h1.therapy-city #{therapy.therCity}
+          h1.therapy-state #{therapy.therState}
+    
+  .container-fluid
+    .padding-wrapper
+      .row
+        .col-md-6
+          .therapy-contact-card
+            .text-layout-paragraph
+              .h4.therapy-contact-card-header Request Appointment
+              .therapy-contact-card-phone 704.444.4444 
+        .col-md-6.services-wrap  
+          .therapy-services-card
+            h4.section-title.mobile-reveal Featured Services
+            .services.scroll.clearfix 
+              ul
+                each service in services
+                  li #{service}
+      .row
+        .col-md-6
+          .therapy-photo-card
+            img.img-thumbnail.thumbnail1.mr-2(src='/static/img/' + therapy.therImage1)
+            if therapy.therImage2  
+              img.img-thumbnail.thumbnail2.mr-2(src='/static/img/' + therapy.therImage2)
+            if therapy.therImage3 
+              img.img-thumbnail.thumbnail2(src='/static/img/' + therapy.therImage3)
+        .col-md-6
+          .therapy-about-card
+            .h4.therapy-about-card-header About
+            .therapy-about-card-text #{therapy.therAbout}
+      .row
+        .col-md-6
+          .therapy-deals-card
+            .h4.therapy-deals-card-header Deals
+            .therapy-about-card-text #{therapy.therDeals}           
+      
+       
+  script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb', crossorigin='anonymous')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn', crossorigin='anonymous')
+    
+    

@@ -1,0 +1,39 @@
+extends ./partials/head
+
+block content
+  .jumbotron.jumbotron-fluid.bg-info.text-black
+    .container.text-sm-center.pt-3
+      #jumboHead1.display-2 Search Therapy
+      .lead Find Body Therapy in the Lake Norman Area.
+  // /jumbotron
+  .container.pt-2
+    // about
+    #about.row
+      .col-md-6
+        img#imgIndex1.mb-1.img-fluid.rounded.hidden-sm-down(src='/static/img/yoga_mountain_2.jpg')
+      .col-md-6
+        h3.mx-auto About Search Therapy
+        p.mx-auto
+          | Search Therapy makes it easier to find body therapist and therapies in the Lake Norman Area, north of Charlotte, NC. We have compiled a list with links to some of the best professionals in the Area.
+      .col-md-6
+    // Therapy Cards
+    h1#therapy2.display-4.text-center.my-5 Therapies
+    #main.main-content.clearfix
+    .row 
+      for therapy in therapies
+        .col-md-6.col-lg-4 
+          .card.mb-5
+            img.img-thumbnail(src='static/img/' + therapy.therImage1)
+            // img.img-thumbnail(src='static/img/' + therapy.therImage1)
+            .card-block
+              h4.card-therapy #{therapy.therName}
+              h4.card-therapy #{therapy.therStreet}
+              h4.card-therapy #{therapy.therCity}
+              h4.card-therapy #{therapy.therState}
+              a.btn.btn-primary(href='/therapies/' + therapy.id + '/details', role='button') Details
+
+  script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb', crossorigin='anonymous')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn', crossorigin='anonymous')
+  
+

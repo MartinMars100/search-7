@@ -1,0 +1,756 @@
+.navbar {
+  font-size: 1.25rem;
+  padding-top: .45rem;
+}
+
+.bg-primary {
+  background-color : #588c7e !important ;
+}
+
+.jumbotron {
+  /*background: url('../img/jumbo-bg.jpg');*/
+  background-size: cover;
+  background-color : #588c7e !important ;
+  color: white;
+}
+
+.btn {
+  max-width: 20rem;
+  background-color: #587e76;
+  font-size: 1.25rem;
+  font-weight: 400;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  color: white;
+}
+
+.btn:hover {
+  color: #f2ae72;
+  background-color: #587e76;
+}
+
+.active {
+  color : white !important ;
+}
+
+.card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.card-therapy{
+  font-size: 1.25em;
+}
+
+.card-name {
+  font-size: 1em;
+}
+
+.card-text {
+  font-size: 1em;
+}
+
+a {
+  color: #456e63;
+  /*color: #d96459;*/
+  text-decoration: none;
+  font-weight: bold;
+}
+  a:hover {
+    color: #f2ae72;
+  }
+a.button, [type=submit] {
+  color: white;
+  background: #588c7e;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 10px 14px 12px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+input[type=submit] {
+  font-size: 1em;
+  border: 0;
+  color: white;
+}
+
+a.button:hover, input[type=submit]:hover {
+  background-color: #f2ae72;
+}
+p {
+  margin: 20px auto;
+}
+
+th {
+  color: #456e63;
+  font-size: 1.25em;
+  font-weight: bold;
+  border-bottom: 2px solid #D8B493;
+  text-align: left;
+  padding: 5px 20px 5px 10px;
+}
+tr {
+  min-height: 100px;
+}
+tr .button {
+  background-color: #588c7e;
+  padding: 4px 8px 5px;
+  font-weight: normal;
+}
+  tr .button:hover {
+    background-color: #f2ae72;
+  }
+tr:nth-child(2n) {
+  background: #E7E7E7;
+}
+td {
+  color: #184f68;
+  font-weight: normal;
+  padding: 5px 20px 5px 10px;
+}
+
+a.button{
+  height:39px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#tableData {
+  color: #456e63;
+}
+
+.list {
+  background: #e3e0cc;
+  padding: .875em 1.875em 1.875em;
+  /*width: 80%;*/
+  /*min-width: 500px;*/
+  margin: 20px auto 0;
+  /*border-top: 40px solid #5a6772;*/
+  text-align: left; }
+  .list .item {
+    color: red;
+    border-bottom: 2px solid #edeff0;
+    padding: 17px 0 18px 17px; }
+    .list .item label {
+      padding-left: 5px;
+      cursor: pointer; }
+  
+
+.add {
+  color: #d96459;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Columns - 1000px overall - Col are 65px wide -
+gutters are 20px wide - See Gridulator website for calculations============*/
+  
+    .grid-1 {
+      width: 6.5%
+    }
+    .grid-2 {
+      width: 15%
+    }
+    .grid-3 { 
+      width: 23.5% 
+    }
+    .grid-4 { 
+      width: 32% 
+    }
+    .grid-5 { 
+      width: 40.5% 
+    }
+    .grid-6 { 
+      width: 49% 
+    }
+    .grid-7 { 
+      width: 57.5% 
+    }
+    .grid-8 { 
+      width: 66% 
+    }
+     .grid-9 { 
+      width: 74.5% 
+    }
+     .grid-10 { 
+      width: 83% 
+    }
+     .grid-11 { 
+      width: 91.5% 
+    }
+     .grid-12 { 
+      width: 100% 
+    }
+
+.inline-headers h4 {
+  color: #f2ae72;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.inline-headers {
+  margin-bottom: 20px;
+}
+    
+.nameEdit:after {
+    content: " Click Save";
+    text-transform: uppercase;
+    color: red;
+    font-size: 20px;
+    padding-left: 5px; }
+    
+#titleHead {
+  margin-top: 10px;
+  color: #456e63;
+  font-weight: bold;
+}
+
+#profileHead {
+  font-size: 4em;
+  margin-top: 20px;
+  color: #f2ae72;
+}
+
+#profileEmail {
+  margin-top: 20px;
+  color: #f2ae72;
+  font-size: 2em;
+}
+
+
+table {
+  font-size: medium;
+}
+
+/*Therapy Forms Styling*/
+
+#therName,
+#therStreet,
+#therCity,
+#therState {
+  /*margin-left: 1.25em;*/
+  margin-bottom: 1.125em;	
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#therName {
+  width: 40%;
+}
+
+#therStreet {
+  width: 40%;
+}
+
+#therCity {
+  width: 20%;
+}
+
+#therState {
+  width: 10%;
+}
+
+#therImage1,
+#therImage2,
+#therImage3 {
+  width: 50%;
+}
+
+#therAbout,
+#therDeals {
+  width: 90%;
+}
+
+.img-thumbnail {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.img-thumbnail2 {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/*User Forms Styling*/
+#userName,
+#userEmail,
+#userAdmin {
+  margin-bottom: 1.125em;	
+	font-size: 1em;
+	font-weight: bold;
+}
+
+#userName,
+#userEmail {
+  width: 50%;
+}
+
+.some-class {
+  float: left;
+  clear: none;
+}
+
+label[for=userAdmin] {
+  float: left;
+  /*clear: none;*/
+  /*display: block;*/
+  padding: 2px 1em 0 0;
+}
+
+input[type=radio],
+.radio {
+  float: left;
+  clear: none;
+  margin: 2px 0 0 2px;
+}
+
+.admin{
+  /*float: left;*/
+  display: block;
+}
+
+.submit{
+  display: inline-block;
+  /*float: left;*/
+}
+
+/*About Page Styling*/
+
+.therapy-name {
+  color: #f2ae72;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 3em;
+  margin-bottom: 16px;
+}
+
+.therapy-street,
+.therapy-city,
+.therapy-state {
+    font-size: 1.7em
+  }
+  
+.therapy-owner-card
+.text-layout-paragraph{
+    width: 100%;
+    background: #f5f5f5;
+    padding: 20px 30px;
+}
+
+.therapy-contact-card  {
+    width: 100%;
+    background: #f5f5f5;
+    padding: 20px 30px;
+    color: #787878;
+    background: #f5f5f5;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    line-height: .8;
+    padding-left: 30px;
+    height: 100%;
+    border-left: 5px solid #d96459;
+}
+
+.therapy-about-card-header,
+.therapy-deals-card-header {
+  width: 100%;
+  /*padding: 20px 30px;*/
+  color: #787878;
+  font-size: 26px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+  line-height: .8;
+  /*padding-left: 30px;*/
+  height: 100%;
+  /*border-left: 5px solid #d96459*/
+}
+
+/*.therapy-owner-info-card .text-layout-paragraph {*/
+/*    margin: 0;*/
+/*    background: transparent;*/
+/*}*/
+
+.therapy-services-card {
+    width: 100%;
+    background: #f5f5f5;
+    padding: 20px 30px;
+    color: #787878;
+    background: #f5f5f5;
+    padding-left: 30px;
+    height: 100%;
+    border-left: 5px solid #d96459;
+}
+
+.section-title {
+    color: #787878;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    /*line-height: .8;*/
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+.therapy-photo-card {
+  margin-top: 40px;
+}
+
+.therapy-about-card {
+  color: #787878;
+  margin: 40px 20px 0 20px;
+}
+
+.therapy-deals-card {
+  color: #787878;
+  margin: 40px 20px 40px 20px;
+}
+
+
+.therapy-about-card-text {
+  background-color: transparent;
+  font-family: Arial;
+  font-size: 14pt;
+  white-space: pre-wrap;
+}
+
+.thumbnail1,
+.thumbnail2 {
+  padding: 10px;
+}
+
+.error {
+  color: #d96459
+}
+
+.avatar {
+    margin-left: 20px;
+    height: 40px;
+    width: 40px;
+    margin-right: 18px;
+    border: solid 2px rgba(255,255,255, .75);
+}
+
+.avatarProfile {
+    margin-top: 20px;
+    height: 60px;
+    width: 60px;
+    margin-right: 18px;
+    border: solid 2px rgba(255,255,255, .75);
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+/* ================================= 
+  Forms - Base Element Styles
+==================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+
+body,
+input,
+button {
+ font-family: 'Roboto', sans-serif;
+}
+
+body {
+  font: 1em/1.5;
+  color: #184f68;
+  /*background: #b1cec6;*/
+  margin: 12px;
+}
+
+
+
+header {
+	text-align: center;  
+}
+
+h1 {
+	font-size: 2.5em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+	margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* ================================= 
+  Webkit -autofill
+==================================== */
+
+/*input:-webkit-autofill {*/
+/*    -webkit-box-shadow: 0 0 0px 1000px #c1deeb inset;*/
+/*}*/
+ 
+/* ================================= 
+  Form Element Styles
+==================================== */
+#legend{
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+form {
+  margin-top: 2%;
+	padding: .875em 1.875em 1.875em;
+	/*background: #82b0a4;*/
+	background: #e3e0cc;
+	font-weight: 500;
+}
+
+fieldset,
+legend,
+button {
+	padding: 0;
+	border: none;
+}
+
+fieldset {
+	margin-top: 1.5em;
+}
+
+legend,
+button {
+	font-size: 1.25em;	
+}
+
+legend {
+	font-weight: 500;
+	padding-top: .5em;
+	border-top: 2px solid #679cb3;
+	margin-bottom: 1.125em;
+}
+
+/*input[type="text"],*/
+/*input[type="email"],*/
+/*legend {*/
+/*	width: 100%;*/
+/*}*/
+
+label {
+	color: #456e63;
+	font-size: 1em;
+	font-weight: bold;
+	display: block;
+	/*display: inline-block;*/
+	margin-bottom: .5em;
+	/*width: 15%;*/
+}
+
+label[for="color"] {
+	margin-top: .5em;
+}
+
+input,
+textarea {
+	margin-bottom: 1.125em;	
+	background-color: #dbd7bd;
+	color: #456e63;
+	font-size: 1em;
+	font-weight: bold;
+  padding: .8em;
+  border: 2px solid #456e63;
+    outline: none;
+}
+
+input[id="titleOther"]{
+  width: 50%;
+}
+
+:focus{
+    outline: none !important;  /* Overrides Chrome outline bright blue */
+} 
+
+input:focus,
+textarea:focus {
+  color: #456e63;
+  font-weight: bold;
+	border: 2px solid #184f68;
+	background: #fff;
+	transition: border-color .4s, background-color .4s;
+}
+
+
+select::-ms-expand{
+  display:none;
+}
+
+#title:focus {
+	transition: border-color .4s, background-color .4s;
+}
+
+.focusBright {  /* This is used to highlight the Activites Label */
+  border:  2px solid #184f68;
+  background: #fff;
+  color: #588c7e;
+}
+
+.title label {
+	color: cadetblue;
+	margin-bottom: .5em;
+}
+
+.labelTitleOther {
+	margin: 1em 0 .5em 0;
+	display: block;
+}
+
+/* ================================= 
+  Helper Classes
+==================================== */
+
+/*.form-control, textarea {*/
+/*  background-color: red;*/
+/*}*/
+
+/*nav-link a.active {background:red;}*/
+
+.error {      /* display error messages in red */
+  color: #b30000;
+  font-weight: 500;
+}
+
+#tweetHash{
+  /*font-size: 2em;*/
+  /*height: 40px;*/
+  color: white
+}
+
+#tweetHead1 {
+  color: #588c7e;
+  margin-top: 1em;
+  margin-bottom: .5em;
+}
+
+#tweetHead2 {
+  color: #588c7e;
+  margin-bottom: 1em;
+}
+
+#tweetDate {
+  font-size: 16px;
+  color: #588c7e;
+}
+
+/*#tweetAuthor {*/
+/*  font-size: 12px;*/
+/*  color: grey;*/
+/*}*/
+
+/*#tweetUsername {*/
+/*  font-size: 14px;*/
+/*  color: #d96459;*/
+/*}*/
+
+#tweetText {
+  /*font-size: 12px;*/
+  color: #f2ae72;
+}
+
+
+
+/*--------------------------------------*/
+@media screen and (max-width: 767px) {
+  .therapy-name {
+    font-size: 2em;
+  }
+  .therapy-street,
+  .therapy-city,
+  .therapy-state {
+    font-size: 1.5em;
+  }
+
+
+.therapy-contact:first-of-type {
+    margin-top: 14px;
+}
+
+.therapy-contact-card {
+    padding: 20px 20px;
+}
+
+.therapy.owner-info-card-header {
+  text-transform: uppercase;
+    /* letter-spacing: 3px; */
+    /* margin-top: 0; */
+    font-size: 27px;
+  
+}
+
+.therapy-owner-info-card-phone {
+  font-size: 27px;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #d96459;;
+}
+
+.services-wrap {
+    margin-top: 20px;
+}
+
+.scroll {
+    /*height: 230px;*/
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-weight: normal;
+    padding-right: 40px;
+}
+
+}
+
+/*--------------------------------------*/
+@media screen and (min-width: 990px) {
+  .avatarProfile {
+    /*margin-left: 40px;*/
+    margin-top: 20px;
+}
+}
+
+/*--------------------------------------*/
+@media screen and (max-width: 460px) {
+  #jumboHead1 {
+  font-size: 50px;
+}
+}
+
+@media screen and (max-width: 460px) {
+  
+  #therapy2 {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #f2ae72;
+}
+
+  #profileEmail {
+    font-size: 1.5em;
+  }
+
+
+}
+
+@media screen and (max-width: 992px) {
+  .btn {
+    max-width: 12rem;
+    margin-bottom: 10px;
+  }
+}
