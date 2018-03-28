@@ -23,13 +23,15 @@ var app = express();
 var environment = process.env.NODE_ENV;
 var callback = '';
 
-console.log('log app.js 222222-------------------------');
+console.log('log app.js 222222222222222222222222---');
+console.log('log process.env.FACEBOOK_APP_ID = ' + process.env.FACEBOOK_APP_ID );
 
 
 console.log ('log app.js 3333333333333333333');
 console.log('app.js port coming');
 console.log('app.js process.env.NODE_ENV = ' + process.env.NODE_ENV);
 console.log('app.js process.env.TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
+
 
 console.log('app.js process.env.PORT = ' + process.env.PORT);
 var port = process.env.PORT || 5000;
@@ -175,7 +177,7 @@ app.get('/error', function(req, res) { //error route is run when a connection er
 
 //Seed db everytime
 // config     = require('./src/config');  
-require('./src/seed')
+require('./src/seed');
 
 // Basic Listen
 var server = app.listen(app.get('port'), function() {

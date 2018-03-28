@@ -17,7 +17,6 @@ var object = {}, //new Object literal notation
 
 //Check for Heroku environment
 console.log('therapies.js log process.env.NODE_ENV = ' + process.env.NODE_ENV);
-console.log('therapies.js log process.env.PORT = ' + process.env.PORT);
 
 console.log('log process.env.TWIT_CONSUMER_KEY = ' + process.env.TWIT_CONSUMER_KEY);
 if (process.env.NODE_ENV === 'production'){
