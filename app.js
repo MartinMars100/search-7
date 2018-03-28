@@ -54,7 +54,9 @@ if (process.env.NODE_ENV === 'production'){
   console.log('TWIT_CONSUMER_SECRET = ' + process.env.TWIT_CONSUMER_SECRET);
 }
 
-// callback = "https://search-7.herokuapp.com/auth/facebook/return";
+if (environment = 'production') { 
+ callback = "https://search-7.herokuapp.com/auth/facebook/return";
+}
 
 function generateOrFindUser(accessToken, refreshToken, profile, done){
   if(profile.emails[0]){
