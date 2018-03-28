@@ -1,4 +1,5 @@
 'use strict';
+console.log('log therapies.js 1111111111111111------------');
 
 var express = require('express'),
     router = express.Router(),
@@ -13,12 +14,10 @@ var object = {}, //new Object literal notation
     errorMsg	 = '',
     banner,
     services = [];
-    
-
 
 //Check for Heroku environment
-console.log('log process.env.NODE_ENV = ' + process.env.NODE_ENV);
-console.log('log process.env.PORT = ' + process.env.PORT);
+console.log('therapies.js log process.env.NODE_ENV = ' + process.env.NODE_ENV);
+console.log('therapies.js log process.env.PORT = ' + process.env.PORT);
 
 console.log('log process.env.TWIT_CONSUMER_KEY = ' + process.env.TWIT_CONSUMER_KEY);
 if (process.env.NODE_ENV === 'production'){
@@ -31,15 +30,15 @@ if (process.env.NODE_ENV === 'production'){
 if (process.env.NODE_ENV === 'production'){
   console.log('therapies.js process.env.NODE_ENV is production and = ' + process.env.NODE_ENV)
   console.log('therapies.js production TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
-  console.log('TWIT_ACCESS_TOKEN_SECRET = ' + process.env.TWIT_ACCESS_TOKEN_SECRET);
-  console.log('TWIT_CONSUMER_KEY = ' + process.env.TWIT_CONSUMER_KEY);
-  console.log('TWIT_CONSUMER_SECRET = ' + process.env.TWIT_CONSUMER_SECRET);
+  console.log('therapies.js TWIT_ACCESS_TOKEN_SECRET = ' + process.env.TWIT_ACCESS_TOKEN_SECRET);
+  console.log('therapies.js TWIT_CONSUMER_KEY = ' + process.env.TWIT_CONSUMER_KEY);
+  console.log('therapies.js TWIT_CONSUMER_SECRET = ' + process.env.TWIT_CONSUMER_SECRET);
 } else {
   console.log('therapies.js process.env.NODE_ENV is not production and = ' + process.env.NODE_ENV)
   console.log('therapies.js development TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
-  console.log('TWIT_ACCESS_TOKEN_SECRET = ' + process.env.TWIT_ACCESS_TOKEN_SECRET);
-  console.log('TWIT_CONSUMER_KEY = ' + process.env.TWIT_CONSUMER_KEY);
-  console.log('TWIT_CONSUMER_SECRET = ' + process.env.TWIT_CONSUMER_SECRET);
+  console.log('therapies.js TWIT_ACCESS_TOKEN_SECRET = ' + process.env.TWIT_ACCESS_TOKEN_SECRET);
+  console.log('therapies.js TWIT_CONSUMER_KEY = ' + process.env.TWIT_CONSUMER_KEY);
+  console.log('therapies.js TWIT_CONSUMER_SECRET = ' + process.env.TWIT_CONSUMER_SECRET);
 }
 
 var config = {

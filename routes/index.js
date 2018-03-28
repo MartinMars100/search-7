@@ -1,4 +1,5 @@
 'use strict';
+console.log('log index.js file');
 
 var express = require('express'),
     router = express.Router(),
@@ -21,14 +22,14 @@ function Image(img) {
 
 // Check environmental variables
 if (process.env.NODE_ENV === 'production'){
-  console.log('therapies.js process.env.NODE_ENV is defined and = ' + process.env.NODE_ENV)
-  console.log('therapies.js production TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
+  console.log('index.js process.env.NODE_ENV is defined and = ' + process.env.NODE_ENV)
+  console.log('index.js production TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
   console.log('TWIT_ACCESS_TOKEN_SECRET = ' + process.env.TWIT_ACCESS_TOKEN_SECRET);
   console.log('TWIT_CONSUMER_KEY = ' + process.env.TWIT_CONSUMER_KEY);
   console.log('TWIT_CONSUMER_SECRET = ' + process.env.TWIT_CONSUMER_SECRET);
 } else {
-  console.log('therapies.js process.env.NODE_ENV is defined and = ' + process.env.NODE_ENV)
-  console.log('therapies.js development TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
+  console.log('index.js process.env.NODE_ENV is defined and = ' + process.env.NODE_ENV)
+  console.log('index.js development TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
   console.log('TWIT_ACCESS_TOKEN_SECRET = ' + process.env.TWIT_ACCESS_TOKEN_SECRET);
   console.log('TWIT_CONSUMER_KEY = ' + process.env.TWIT_CONSUMER_KEY);
   console.log('TWIT_CONSUMER_SECRET = ' + process.env.TWIT_CONSUMER_SECRET);

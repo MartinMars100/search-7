@@ -1,7 +1,5 @@
 'use strict';
-console.log ('log app.js');
-console.log('app.js port coming');
-console.log('app.js process.env.PORT = ' + process.env.PORT);
+console.log('log app.js 111111111111111--------------------------');
 
 // load modules
 var express = require('express'),
@@ -25,6 +23,14 @@ var app = express();
 var environment = process.env.NODE_ENV;
 var callback = '';
 
+console.log('log app.js 222222-------------------------');
+
+
+console.log ('log app.js 3333333333333333333');
+console.log('app.js port coming');
+console.log('app.js process.env.NODE_ENV = ' + process.env.NODE_ENV);
+console.log('app.js process.env.TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
+
 console.log('app.js process.env.PORT = ' + process.env.PORT);
 var port = process.env.PORT || 5000;
 console.log('log process.env.PORT = ' + process.env.PORT)
@@ -33,20 +39,20 @@ console.log('log process.env.NODE_ENV = ' + process.env.NODE_ENV);
 
 // Check environmental variables
 if (process.env.NODE_ENV === 'production'){
-  console.log('therapies.js process.env.NODE_ENV is defined and = ' + process.env.NODE_ENV)
-  console.log('therapies.js production TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
+  console.log('app.js process.env.NODE_ENV is defined and = ' + process.env.NODE_ENV)
+  console.log('app.js production TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
   console.log('TWIT_ACCESS_TOKEN_SECRET = ' + process.env.TWIT_ACCESS_TOKEN_SECRET);
   console.log('TWIT_CONSUMER_KEY = ' + process.env.TWIT_CONSUMER_KEY);
   console.log('TWIT_CONSUMER_SECRET = ' + process.env.TWIT_CONSUMER_SECRET);
 } else {
-  console.log('therapies.js process.env.NODE_ENV is defined and = ' + process.env.NODE_ENV)
-  console.log('therapies.js development TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
+  console.log('app.js process.env.NODE_ENV is defined and = ' + process.env.NODE_ENV)
+  console.log('app.js development TWIT_ACCESS_TOKEN = ' + process.env.TWIT_ACCESS_TOKEN);
   console.log('TWIT_ACCESS_TOKEN_SECRET = ' + process.env.TWIT_ACCESS_TOKEN_SECRET);
   console.log('TWIT_CONSUMER_KEY = ' + process.env.TWIT_CONSUMER_KEY);
   console.log('TWIT_CONSUMER_SECRET = ' + process.env.TWIT_CONSUMER_SECRET);
 }
 
-callback = "https://search-7.herokuapp.com/auth/facebook/return";
+// callback = "https://search-7.herokuapp.com/auth/facebook/return";
 
 function generateOrFindUser(accessToken, refreshToken, profile, done){
   if(profile.emails[0]){
@@ -136,7 +142,7 @@ app.set('view engine', 'pug');
 app.set('views', __dirname + '/src/public/templates'); //Use __dirname since we
 //sometimes run with a nodemon command with a path to the server.js file.
 
-// app.use('/', therapies);
+app.use('/', therapies);
 app.use('/therapies', therapies);
 app.use('/users', users);
 app.use('/', index);
