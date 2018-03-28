@@ -3,19 +3,24 @@ Treehouse Techdegree Project 12 - Capstone Project The app features an index pag
 To Run the Site Locally
 Find the App on Github and download it Run npm install to install dependencies listed in the package.json file.
 Type mongod in the terminal.
-Open another terminal and typd mongo
+Open another terminal and type mongo
 Once mongod and the mongo shell are open. 
-Each person who runs this locally must use their own config keys which can be entered in the start command of the package.json file.
-
-Keep config.js file off github please.
+Each person who runs this locally must use their own keys which can be entered on the command line when
+running the app.
 It should look something like this:
-module.exports = {
-  consumer_key:         'HHHHHeeeeaaa...',
-  consumer_secret:      'sB1B7......',
-  access_token:         '833333.....',
-  access_token_secret:  'k444444....'
-};
+
+FACEBOOK_APP_ID=000000 FACEBOOK_APP_SECRET=62cccc NODE_ENV=development  
+TWIT_ACCESS_TOKEN=0005 
+TWIT_ACCESS_TOKEN_SECRET=iiii0000  TWIT_CONSUMER_KEY=T33300
+TWIT_CONSUMER_SECRET=6rrrr000   node app.js
+
+Keep keys off github.
+
+
+To run the Website in production on Heroku, put the keys
+in a .env file you create from the terminal after setting up the
+heroku app and adding the mongodb addon,
 
 
 To Visit the Website on Heroku
-Visit the Heroku Hosted Website at https://search-8.herokuapp.com/ Add therapies and use the image files to add images to display.
+Visit the Heroku Hosted Website at https://search-7.herokuapp.com/ Add therapies and use the image files to add images to display.
