@@ -73,22 +73,24 @@ router.get('/twitter', function(req, res, next){
   var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
   .then(function(account){
     console.log('log 1111 ************* router get /twitter');
+    res.render('profile');
+  }); // end first then
     // if (errorMsg === 'twitter-fail') { //If errMsg variable has an error message 
     //   var error = "Sorry, there are no current Twitter Posts.";
     //   return res.render('profile', {
     //     error: error
     //   });    
     // }
-    var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
-    .then(function(tweets){
-      // console.log('log 2222  router get /twitter');
-      res.render("twitter", {
-        account: account.data,
-        tweets: tweets.data,
-        title: "Latest Tweets from Search Therapy"
-      }); // end render function
-    }); // end then
-  }); // end then
+  //   var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
+  //   .then(function(tweets){
+  //     // console.log('log 2222  router get /twitter');
+  //     res.render("twitter", {
+  //       account: account.data,
+  //       tweets: tweets.data,
+  //       title: "Latest Tweets from Search Therapy"
+  //     }); // end render function
+  //   }); // end then
+  // }); // end then
 });
 
 /* GET login page */
