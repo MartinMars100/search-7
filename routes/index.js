@@ -208,6 +208,7 @@ function gotDataTweets(err, data, response){  // Our lists of tweets
     errorMsg = "twitter-fail"; // This will be caught on app.get route
   } 
   object.tweets = data;   // load tweets to object   
+  console.log('object.tweets ========== ' + object.tweets);
   tweets = object.tweets;
   console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
   return object.tweets;
