@@ -204,10 +204,10 @@ router.post('/register', function(req, res, next) {
 
 function gotAccountTest(err, data, res, next){  
   if (err) {
-    console.log('log gotAccountTest function err found');
+    console.log('log gotAccountTest function err found err = ' + err);
     errorMsg = "twitter-fail"; // This will be caught on app.get route
   }  
-  console.log('gotAccountTest no err found');
+  console.log('gotAccountTest after err check');
 
 } //end function
 
