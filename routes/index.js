@@ -45,7 +45,7 @@ var config = {
 // Initialise application
 var T = new Twit(config),
     app = express();
-    port = process.env.PORT;
+    process.env.PORT || 5000;
 
 var params = {         //Parameters are used in our calls to Twitter
   screen_name: 'MartyKunsman',
