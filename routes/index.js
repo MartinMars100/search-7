@@ -72,7 +72,7 @@ router.get('/', mid.setEnv, function(req, res, next){
 router.get('/twitter', function(req, res, next){
   var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
   .then(function(account){
-    // console.log('log 1111  router get /twitter');
+    console.log('log 1111 ************* router get /twitter');
     // if (errorMsg === 'twitter-fail') { //If errMsg variable has an error message 
     //   var error = "Sorry, there are no current Twitter Posts.";
     //   return res.render('profile', {
