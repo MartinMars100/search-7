@@ -177,6 +177,7 @@ router.post('/register', function(req, res, next) {
 //// Twitter Display Functions
 
 function gotAccount(err, data, res, next){  // Used for screen name
+  console.log('log gotAccount function---------------------')
   if (err) {
     errorMsg = "twitter-fail"; // This will be caught on app.get route
   }  
