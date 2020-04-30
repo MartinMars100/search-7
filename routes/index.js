@@ -181,6 +181,7 @@ function gotAccount(err, data, res, next){  // Used for screen name
   if (err) {
     errorMsg = "twitter-fail"; // This will be caught on app.get route
   }  
+  console.log(' log 2 in gotAccount function -------------');
   object.account = data;
   return object.account;
 }
