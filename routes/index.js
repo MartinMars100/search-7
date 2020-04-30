@@ -46,7 +46,7 @@ var config = {
 var T = new Twit(config);
 
 var params = {         //Parameters are used in our calls to Twitter
-  screen_name: 'martykunsman',
+  screen_name: 'MartyKunsman',
   count: 5
 };
 
