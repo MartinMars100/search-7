@@ -183,6 +183,7 @@ function gotAccount(err, data, res, next){  // Used for screen name
   }  
   console.log(' log 2 in gotAccount function -------------');
   object.account = data;
+  console.log('object.accont = ' + object.account);
   return object.account;
 }
     
