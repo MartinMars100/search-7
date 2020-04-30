@@ -209,6 +209,7 @@ function gotDataTweets(err, data, response){  // Our lists of tweets
   } 
   object.tweets = data;   // load tweets to object   
   tweets = object.tweets;
+  console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
   return object.tweets;
 } 
 
