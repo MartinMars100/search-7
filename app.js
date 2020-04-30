@@ -99,7 +99,7 @@ app.use(methodOverride('_method'));
 app.use(jsonParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/search-therapy', { useMongoClient: true }, function(err) {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/search-therapy-1', { useMongoClient: true }, function(err) {
   console.log('MONGODB_URI = ' + process.env.MONGODB_URI);
   if(err) {
     console.log('Failed connecting to Mongodb');
@@ -109,8 +109,22 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/search-therapy'
 });
 
 var Promise = require("bluebird");
+var mongoClient = Promise.promisifyAll(require('mongodb')).MongoClient;
+
+mongoClient.connectAsync('mongodb://localhost/search-therapy-1')
+    .then(function(db) {
+      return db.collection('search-therapy-1').findAsync({})
+    })  
+    .then (function(cursor) {
+        cursor.each(function (err, doc) {
+          console.log(doc);
+        })
+    });
 
 var db = mongoose.connection;
+
+
+
 
 // use sessions for tracking logins
 app.use(session({
