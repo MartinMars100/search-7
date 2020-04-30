@@ -108,6 +108,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/search-therapy'
   }
 });
 
+var Promise = require("bluebird");
+
 var db = mongoose.connection;
 
 // use sessions for tracking logins
