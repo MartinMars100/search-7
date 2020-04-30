@@ -71,8 +71,30 @@ router.get('/', mid.setEnv, function(req, res, next){
 
 // GET /twitter Latest Tweets for SearchTherapy
 // router.get('/twitter', function(req, res, next){
-  router.get('/twitter', function(req, res, next){
-    T.get('account/settings', params, gotAccountTest) //This retrieves hd screenname
+  // router.get('/twitter', function(req, res, next){
+  //   T.get('account/settings', params, gotAccountTest) //This retrieves hd screenname
+  //   console.log('log 1111  router get /twitter');
+  //   if (errorMsg === 'twitter-fail') { //If errMsg variable has an error message 
+  //     var error = "Sorry, there are no current Twitter Posts.";
+  //     return res.render('profile', {
+  //       error: error
+  //     });    
+  //   }
+  //   var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
+  //   .then(function(tweets){
+  //     console.log('log 2222  router get /twitter');
+  //     res.render("twitter", {
+  //       account: account.data,
+  //       tweets: tweets.data,
+  //       title: "Latest Tweets from Search Therapy"
+  //     }); // end render function
+  //   }); // end then
+  // }); // end router get
+
+
+router.get('/twitter', function(req, res, next){
+  var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
+  .then(function(account){
     console.log('log 1111  router get /twitter');
     if (errorMsg === 'twitter-fail') { //If errMsg variable has an error message 
       var error = "Sorry, there are no current Twitter Posts.";
@@ -89,30 +111,8 @@ router.get('/', mid.setEnv, function(req, res, next){
         title: "Latest Tweets from Search Therapy"
       }); // end render function
     }); // end then
-  }); // end router get
-
-
-// router.get('/twitter', function(req, res, next){
-//   var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
-//   .then(function(account){
-//     console.log('log 1111  router get /twitter');
-//     if (errorMsg === 'twitter-fail') { //If errMsg variable has an error message 
-//       var error = "Sorry, there are no current Twitter Posts.";
-//       return res.render('profile', {
-//         error: error
-//       });    
-//     }
-//     var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
-//     .then(function(tweets){
-//       console.log('log 2222  router get /twitter');
-//       res.render("twitter", {
-//         account: account.data,
-//         tweets: tweets.data,
-//         title: "Latest Tweets from Search Therapy"
-//       }); // end render function
-//     }); // end then
-//   }); // end then
-// });
+  }); // end then
+});
 
 /* GET login page */
 router.get('/login', function(req, res) {
@@ -202,14 +202,14 @@ router.post('/register', function(req, res, next) {
 
 //// Twitter Display Functions
 
-function gotAccountTest(err, data, res, next){  
-  if (err) {
-    console.log('log gotAccountTest function err found err = ' + err);
-    errorMsg = "twitter-fail"; // This will be caught on app.get route
-  }  
-  console.log('gotAccountTest after err check');
+// function gotAccountTest(err, data, res, next){  
+//   if (err) {
+//     console.log('log gotAccountTest function err found err = ' + err);
+//     errorMsg = "twitter-fail"; // This will be caught on app.get route
+//   }  
+//   console.log('gotAccountTest after err check');
 
-} //end function
+// } //end function
 
 function gotAccount(err, data, res, next){  // Used for screen name
   console.log('log gotAccount function---------------------')
