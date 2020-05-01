@@ -70,7 +70,7 @@ router.get('/', mid.setEnv, function(req, res, next){
 });
 
 router.get('/twitter', function(req, res, next){
-  // res.render('twitter');
+  res.render('twitter');
   var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
   .then(function(account){
     console.log('log 1111 ************* router get /twitter');
