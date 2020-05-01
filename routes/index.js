@@ -217,7 +217,11 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
   console.log('object.tweets = ' + object.tweets);
   console.log('object.tweets.length = ' + object.tweets.length);
   // return object.tweets;
-  return res.render('twitter');
+  res.render("twitter", {
+        account: account,
+        tweets: tweets,
+        title: "Latest Tweets from Search Therapy"
+      }); // end render function
 } 
 
 async function myTweets() {
