@@ -241,7 +241,7 @@ async function myTweets(res,next) {
 router.get('/twitter', function(req, res, next){
   myTweets(res, next)
   // .exec(function (error,user){
-  .then(function (account,tweets){
+  .then((response) => {
       return res.render("twitter", {
           account: account,
           tweets: tweets,
