@@ -204,9 +204,9 @@ router.get('/twitter', async (req, res, next) => {
         tweets: tweets,
         title: "Latest Tweets from Search Therapy"
       }); // end render function
-    } catch (err) {
-      next(err);
-    } 
+  } catch (err) {
+      res.render("errors");
+  } 
 }); // end router get
 
 // router.get('/twitter', async (req, res, next) => {
