@@ -210,7 +210,7 @@ function gotDataTweets(err, data, response){  // Our lists of tweets
   } 
   console.log('log err after err check gotDataTweets Function');
   object.tweets = data;   // load tweets to object   
-  console.log('object.tweets ========== ' + object.tweets);
+  // console.log('object.tweets ========== ' + object.tweets);
   tweets = object.tweets;
   // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
   return object.tweets;
