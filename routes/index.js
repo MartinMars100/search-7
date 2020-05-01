@@ -228,16 +228,13 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
 //   }); // end render function
 
 router.get('/twitter', async (req, res, next) => {
-  let account =  T.get('account/settings', params, gotDataTweets)
-    .catch(e => {
+  try {
+    let account =  await T.get('account/settings', params, gotAccount)
+    res.render("profile");
+  } catch (err) {
       console.log ('log error in router get t.get statuses')
       res.render("errors");
-    })
-    // .exec(function(err, therapies){
-    .then (r => {
-    console.log ('log account later  ======' + account);
-    res.render("profile");
-    });
+  }
 }); // end router get
 
 module.exports = router;
