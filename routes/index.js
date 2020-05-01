@@ -70,7 +70,7 @@ router.get('/', mid.setEnv, function(req, res, next){
 });
 
 router.get('/twitter', function(req, res, next){
-  res.render('login');
+  // res.render('login');
   var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
   .then(function(account){
     console.log('log 1111 ************* router get /twitter');
@@ -82,6 +82,7 @@ router.get('/twitter', function(req, res, next){
     }
     var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
     .then(function(tweets){
+      res.render('login');
       console.log('log 2222 ----=======------- router get /twitter');
       res.render("profile", {
         account: account.data,
