@@ -203,21 +203,21 @@ function gotAccount(err, data, res, next){  // Used for screen name
   return object.account;
 }
     
-// function gotDataTweets(err, data, res, next){  // Our lists of tweets
-//   if (err) {
-//     console.log('log err found!!!!!!!!! gotDataTweets Function');
-//     errorMsg = "twitter-fail"; // This will be caught on app.get route
-//   } 
-//   console.log('log err after err check gotDataTweets Function');
-//   object.tweets = data;   // load tweets to object   
-//   // console.log('object.tweets ========== ' + object.tweets);
-//   tweets = object.tweets;
-//   // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
-//   // console.log('tweets ============ ' + tweets);
-//   console.log('object.tweets = ' + object.tweets);
-//   console.log('object.tweets.length = ' + object.tweets.length);
-//   return object.tweets;
-// } 
+function gotDataTweets(err, data, res, next){  // Our lists of tweets
+  if (err) {
+    console.log('log err found!!!!!!!!! gotDataTweets Function');
+    errorMsg = "twitter-fail"; // This will be caught on app.get route
+  } 
+  console.log('log err after err check gotDataTweets Function');
+  object.tweets = data;   // load tweets to object   
+  // console.log('object.tweets ========== ' + object.tweets);
+  tweets = object.tweets;
+  // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
+  // console.log('tweets ============ ' + tweets);
+  console.log('object.tweets = ' + object.tweets);
+  console.log('object.tweets.length = ' + object.tweets.length);
+  return object.tweets;
+} 
 
 async function myTweets() {
   var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
