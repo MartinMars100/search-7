@@ -224,30 +224,43 @@ async function myTweets(res,next) {
   console.log('account = ' + account);
   var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
   console.log('tweets = ' + tweets);
-  res.render("twitter", {
-    account: account,
-    tweets: tweets,
-    title: "Latest Tweets from Search Therapy"
-  }); // end render function
+  return(account,tweets);  
+
+  try {
+    let response = await fetch('/no-user-here');
+    let user = await response.json();
+  } catch(err) {
+    // catches errors both in fetch and response.json
+    alert(err);
+  }
+}
+  // .exec((response) => {
+  //       return res.render("twitter", {
+  //           account: account,
+  //           tweets: tweets,
+  //           title: "Latest Tweets from Search Therapy"
+  //         }); // end render function
+  
+  // }) //end exec function
   // return (account,tweets);
   // return res.render("twitter", {
   //     account: account,
   //     tweets: tweets,
   //     title: "Latest Tweets from Search Therapy"
   //   }); // end render function
-}
-
+// }
 
 router.get('/twitter', function(req, res, next){
   myTweets(res, next)
+  .then(alert)
   // .exec(function (error,user){
-  .then((response) => {
-      return res.render("twitter", {
-          account: account,
-          tweets: tweets,
-          title: "Latest Tweets from Search Therapy"
-        }); // end render function
-  }) //end exec function
+  // .then((response) => {
+  //     return res.render("twitter", {
+  //         account: account,
+  //         tweets: tweets,
+  //         title: "Latest Tweets from Search Therapy"
+  //       }); // end render function
+  // }) //end exec function
 
   // .res.render('twitter');
   // .catch(e => {
