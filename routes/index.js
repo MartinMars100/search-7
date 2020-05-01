@@ -197,28 +197,13 @@ async function myTweets(res,next) {
     // catches errors both in fetch and response.json
     res.render("errors");
   }
-
   return(account,tweets);  
 }
-  // .exec((response) => {
-  //       return res.render("twitter", {
-  //           account: account,
-  //           tweets: tweets,
-  //           title: "Latest Tweets from Search Therapy"
-  //         }); // end render function
-  
-  // }) //end exec function
-  // return (account,tweets);
-  // return res.render("twitter", {
-  //     account: account,
-  //     tweets: tweets,
-  //     title: "Latest Tweets from Search Therapy"
-  //   }); // end render function
-// }
 
 router.get('/twitter', function(req, res, next){
   myTweets(res, next)
   .then((response) => {
+    console.log ('log xxxxxxxxxxxxxxxxxx');
     return res.render("profile", {
         account: account,
         tweets: tweets,
@@ -226,25 +211,6 @@ router.get('/twitter', function(req, res, next){
       }); // end render function
   }) //end then function
   
-
-  // .res.render('twitter');
-  // .catch(e => {
-  //   console.log('There has been a problem with your myTweets operation: ' + e.message);
-  // } )
-  // res.render('twitter');
-  // .res.render("twitter", {
-  //   account: account,
-  //   tweets: tweets,
-  //   title: "Latest Tweets from Search Therapy"
-  // }); // end render function
 });
-
-// axios.get('https://ghibliapi.herokuapp.com/films')
-//     .then((response) => {
-//         console.log('Successfully retrieved our list of movies');
-//         response.data.forEach(movie => {
-//             console.log(`${movie['title']}, ${movie['release_date']}`);
-//         });
-//     })
 
 module.exports = router;
