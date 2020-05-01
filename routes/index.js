@@ -228,7 +228,7 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
 //   }); // end render function
 
 router.get('/twitter', async (req, res, next) => {
-  let account =  T.get('account/settings', params, gotAccount)
+  let account =  T.get('account/settings', params, gotDataTweets)
     .catch(e => {
       console.log ('log error in router get t.get statuses')
       res.render("errors");
