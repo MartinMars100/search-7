@@ -203,7 +203,7 @@ function gotAccount(err, data, res, next){  // Used for screen name
   return object.account;
 }
     
-function gotDataTweets(err, data, tweets){  // Our lists of tweets
+function gotDataTweets(err, data, res, next){  // Our lists of tweets
   if (err) {
     console.log('log err found!!!!!!!!! gotDataTweets Function');
     errorMsg = "twitter-fail"; // This will be caught on app.get route
