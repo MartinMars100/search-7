@@ -184,36 +184,29 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
   return object.tweets;
 } 
 
-async function myTweets(res,next) {
-  var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
-  console.log('account = ' + account);
-  var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
-  console.log('tweets = ' + tweets);
+// async function myTweets(res,next) {
+//   try {
+//     let response = await fetch('/no-user-here');
+//     let user = await response.json();
+//   } catch(err) {
+//     // catches errors both in fetch and response.json
+//     res.render("errors");
+//   }
+// }
 
-  try {
-    let response = await fetch('/no-user-here');
-    let user = await response.json();
-  } catch(err) {
-    // catches errors both in fetch and response.json
-    res.render("errors");
-  }
-
-  let accountResult = await account;
-  let tweetsResult = await tweets;
-  return(accountResult,tweetsResult);  
-}
-
-router.get('/twitter', function(req, res, next){
-  var result = myTweets(res, next)
-  .then((response) => {
+router.get('/twitter', async (req, res, next) => {
+  try { 
+    let account = await T.get('account/settings', params, gotAccount) //This retrieves screen_name
+    let tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
     console.log ('log xxxxxxxxxxxxxxxxxx');
     res.render("profile", {
-        account: accountResult,
-        tweets: tweetResult,
+        account: account,
+        tweets: tweets,
         title: "Latest Tweets from Search Therapy"
       }); // end render function
-  }) //end then function
-  
-});
+    } catch (err) {
+      next(err);
+    } 
+}); // end router get
 
 module.exports = router;
