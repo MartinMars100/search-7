@@ -69,29 +69,29 @@ router.get('/', mid.setEnv, function(req, res, next){
     });
 });
 
-router.get('/twitter', function(req, res, next){
-  // res.render('login');
-  var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
-  .then(function(account){
-    console.log('log 1111 ************* router get /twitter');
+// router.get('/twitter', function(req, res, next){
+  // // res.render('login');
+  // var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
+  // .then(function(account){
+  //   console.log('log 1111 ************* router get /twitter');
     // if (errorMsg === 'twitter-fail') { //If errMsg variable has an error message 
     //   var error = "Sorry, there are no current Twitter Posts.";
     //   return res.render('profile', {
     //     error: error
     //   });    
     // }
-    var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
-    .then(function(err,data,res){
-      // res.render('login');
-      console.log('log 2222 ----=======------- router get /twitter');
-      res.render("profile", {
-        account: account.data,
-        tweets: tweets.data,
-        title: "Latest Tweets from Search Therapy"
-      }); // end render function
-    }); // end then
-  }); // end then
-});
+//     var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
+//     .then(function(account, tweets){
+//       // res.render('login');
+//       console.log('log 2222 ----=======------- router get /twitter');
+//       res.render("profile", {
+//         account: account.data,
+//         tweets: tweets.data,
+//         title: "Latest Tweets from Search Therapy"
+//       }); // end render function
+//     }); // end then
+//   }); // end then
+// });
 
 /* GET login page */
 router.get('/login', function(req, res) {
@@ -203,20 +203,36 @@ function gotAccount(err, data, res, next){  // Used for screen name
   return object.account;
 }
     
-function gotDataTweets(err, data, res, next){  // Our lists of tweets
-  if (err) {
-    console.log('log err found!!!!!!!!! gotDataTweets Function');
-    errorMsg = "twitter-fail"; // This will be caught on app.get route
-  } 
-  console.log('log err after err check gotDataTweets Function');
-  object.tweets = data;   // load tweets to object   
-  // console.log('object.tweets ========== ' + object.tweets);
-  tweets = object.tweets;
-  // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
-  // console.log('tweets ============ ' + tweets);
-  console.log('object.tweets = ' + object.tweets);
-  console.log('object.tweets.length = ' + object.tweets.length);
-  return object.tweets;
-} 
+// function gotDataTweets(err, data, res, next){  // Our lists of tweets
+//   if (err) {
+//     console.log('log err found!!!!!!!!! gotDataTweets Function');
+//     errorMsg = "twitter-fail"; // This will be caught on app.get route
+//   } 
+//   console.log('log err after err check gotDataTweets Function');
+//   object.tweets = data;   // load tweets to object   
+//   // console.log('object.tweets ========== ' + object.tweets);
+//   tweets = object.tweets;
+//   // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
+//   // console.log('tweets ============ ' + tweets);
+//   console.log('object.tweets = ' + object.tweets);
+//   console.log('object.tweets.length = ' + object.tweets.length);
+//   return object.tweets;
+// } 
+
+async function myTweets() {
+  var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
+  console.log('account = ' + account);
+
+  
+}
+
+
+router.get('/twitter', function(req, res, next){
+  myTweets()
+  .catch(e => {
+    console.log('There has been a problem with your myTweets operation: ' + e.message);
+  } )
+});
+
 
 module.exports = router;
