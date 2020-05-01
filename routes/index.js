@@ -235,6 +235,13 @@ router.get('/twitter', async (req, res, next) => {
       console.log ('log error in router get t.get statuses')
       res.render("errors");
   }
+  try {
+    let tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
+    res.render("profile");
+  } catch (err) {
+      console.log ('log error in router get t.get statuses')
+      res.render("errors");
+  }
 }); // end router get
 
 module.exports = router;
