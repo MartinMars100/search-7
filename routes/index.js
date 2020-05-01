@@ -214,6 +214,8 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
   tweets = object.tweets;
   // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
   // console.log('tweets ============ ' + tweets);
+  console.log('object.tweets = ' + object.tweets);
+  console.log('object.tweets.length = ' + object.tweets.length);
   return object.tweets;
 } 
 
