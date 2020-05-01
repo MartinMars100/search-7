@@ -233,11 +233,11 @@ router.get('/twitter', function(req, res, next){
   .catch(e => {
     console.log('There has been a problem with your myTweets operation: ' + e.message);
   } )
-  res.render("twitter", {
+  .res.render("twitter", {
     account: account.data,
     tweets: tweets.data,
     title: "Latest Tweets from Search Therapy"
-}); // end render function
+  }); // end render function
 });
 
 module.exports = router;
