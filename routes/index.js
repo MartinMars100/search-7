@@ -222,8 +222,8 @@ function gotAccount(err, data, res, next){  // Used for screen name
 async function myTweets() {
   var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
   console.log('account = ' + account);
-
-  
+  var tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
+  console.log('tweets = ' + tweets);
 }
 
 
