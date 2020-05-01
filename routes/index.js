@@ -254,7 +254,7 @@ async function myTweets(res,next) {
 router.get('/twitter', function(req, res, next){
   myTweets(res, next)
   .then((response) => {
-    return res.render("twitter", {
+    return res.render("profile", {
         account: account,
         tweets: tweets,
         title: "Latest Tweets from Search Therapy"
