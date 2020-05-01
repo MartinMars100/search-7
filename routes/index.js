@@ -230,6 +230,7 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
 router.get('/twitter', async (req, res, next) => {
   try {
     let account =  await T.get('account/settings', params, gotAccount)
+    let tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
     res.render("profile");
   } catch (err) {
       console.log ('log error in router get t.get statuses')
