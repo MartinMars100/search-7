@@ -209,4 +209,17 @@ router.get('/twitter', async (req, res, next) => {
     } 
 }); // end router get
 
+// router.get('/twitter', async (req, res, next) => {
+//   let account = await T.get('account/settings', params, gotAccount) //retrieves screen_name
+//   .catch(e => {
+//       console.log ('log error in router get t.get statuses')
+//       res.render("errors");
+//   })
+//   .then res.render ("profile", {
+//     account: account,
+//     tweets: tweets,
+//     title: "Latest Tweets from Search Therapy"
+//   }); // end render function
+
+
 module.exports = router;
