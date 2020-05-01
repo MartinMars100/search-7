@@ -226,11 +226,11 @@ async function myTweets() {
   var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
   console.log('tweets = ' + tweets);
   // return (account,tweets);
-  return res.render("twitter", {
-      account: account,
-      tweets: tweets,
-      title: "Latest Tweets from Search Therapy"
-    }); // end render function
+  // return res.render("twitter", {
+  //     account: account,
+  //     tweets: tweets,
+  //     title: "Latest Tweets from Search Therapy"
+  //   }); // end render function
 }
 
 
