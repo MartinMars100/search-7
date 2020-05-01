@@ -194,20 +194,26 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
 //   }
 // }
 
-router.get('/twitter', async (req, res, next) => {
-  try { 
-    let account = await T.get('account/settings', params, gotAccount) //This retrieves screen_name
-    let tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
-    console.log ('log xxxxxxxxxxxxxxxxxx');
-    res.render("profile", {
-        account: account,
-        tweets: tweets,
-        title: "Latest Tweets from Search Therapy"
-      }); // end render function
-  } catch (err) {
-      res.render("errors");
-  } 
-}); // end router get
+// router.get('/twitter', async (req, res, next) => {
+//   try { 
+//     let account = await T.get('account/settings', params, gotAccount) //This retrieves screen_name
+//     let tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
+//     console.log ('log xxxxxxxxxxxxxxxxxx');
+//     res.render("profile", {
+//         account: account,
+//         tweets: tweets,
+//         title: "Latest Tweets from Search Therapy"
+//       }); // end render function
+//   } catch (err) {
+//       res.render("errors");
+//   }.exec 
+//   .exec(function(err, therapies){
+//     if(err) {
+//       return next(err);
+//     }
+//     console.log('log 1 req.session.userId = ' + req.session.userId)
+//   .then tweets = T.get('statuses/user_timeline', params, gotDataTweets)
+// }); // end router get
 
 // router.get('/twitter', async (req, res, next) => {
 //   let account = await T.get('account/settings', params, gotAccount) //retrieves screen_name
@@ -221,5 +227,17 @@ router.get('/twitter', async (req, res, next) => {
 //     title: "Latest Tweets from Search Therapy"
 //   }); // end render function
 
+router.get('/twitter', async (req, res, next) => {
+  return T.get('account/settings', params, gotAccount)
+    .catch(e => {
+      console.log ('log error in router get t.get statuses')
+      res.render("errors");
+    })
+    // .exec(function(err, therapies){
+    .then (r => {
+    console.log ('log r ======' + r);
+    res.render("profile");
+    });
+}); // end router get
 
 module.exports = router;
