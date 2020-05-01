@@ -197,16 +197,19 @@ async function myTweets(res,next) {
     // catches errors both in fetch and response.json
     res.render("errors");
   }
-  return(account,tweets);  
+
+  let accountResult = await account;
+  let tweetsResult = await tweets;
+  return(accountResult,tweetsResult);  
 }
 
 router.get('/twitter', function(req, res, next){
-  myTweets(res, next)
+  var result = myTweets(res, next)
   .then((response) => {
     console.log ('log xxxxxxxxxxxxxxxxxx');
     return res.render("profile", {
-        account: account,
-        tweets: tweets,
+        account: accountResult,
+        tweets: tweetResult,
         title: "Latest Tweets from Search Therapy"
       }); // end render function
   }) //end then function
