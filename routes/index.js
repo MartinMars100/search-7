@@ -229,7 +229,7 @@ async function myTweets() {
 
 
 router.get('/twitter', function(req, res, next){
-  myTweets(err, data, res, next)
+  myTweets(data, res, next)
   .catch(e => {
     console.log('There has been a problem with your myTweets operation: ' + e.message);
   } )
