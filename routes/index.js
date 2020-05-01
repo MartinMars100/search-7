@@ -230,7 +230,7 @@ async function myTweets(res,next) {
     let user = await response.json();
   } catch(err) {
     // catches errors both in fetch and response.json
-    alert(err);
+    res.render("errors");
   }
 
   return(account,tweets);  
