@@ -252,7 +252,13 @@ async function myTweets(res,next) {
 
 router.get('/twitter', function(req, res, next){
   myTweets(res, next)
-  .then(alert)
+  .then((response) => {
+    return res.render("twitter", {
+        account: account,
+        tweets: tweets,
+        title: "Latest Tweets from Search Therapy"
+      }); // end render function
+  }) //end then function
   // .exec(function (error,user){
   // .then((response) => {
   //     return res.render("twitter", {
