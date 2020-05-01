@@ -237,8 +237,8 @@ router.get('/twitter', function(req, res, next){
   .catch(e => {
     console.log('There has been a problem with your myTweets operation: ' + e.message);
   } )
-  console.log('account ====++++++++ ' + account);
-  console.log('tweets ====++++++++ ' + tweets);
+  // console.log('account ====++++++++ ' + account);
+  // console.log('tweets ====++++++++ ' + tweets);
   // res.render("twitter", {
   //           account: account.data,
   //           tweets: tweets.data,
