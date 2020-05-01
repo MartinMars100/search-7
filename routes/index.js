@@ -216,7 +216,8 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
   // console.log('tweets ============ ' + tweets);
   console.log('object.tweets = ' + object.tweets);
   console.log('object.tweets.length = ' + object.tweets.length);
-  return object.tweets;
+  // return object.tweets;
+  return res.render('twitter');
 } 
 
 async function myTweets() {
@@ -224,7 +225,12 @@ async function myTweets() {
   console.log('account = ' + account);
   var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
   console.log('tweets = ' + tweets);
-  return (account,tweets);
+  // return (account,tweets);
+  return res.render("twitter", {
+      account: account,
+      tweets: tweets,
+      title: "Latest Tweets from Search Therapy"
+    }); // end render function
 }
 
 
