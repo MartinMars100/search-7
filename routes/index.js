@@ -216,19 +216,19 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
   // console.log('tweets ============ ' + tweets);
   console.log('object.tweets = ' + object.tweets);
   console.log('object.tweets.length = ' + object.tweets.length);
-  // return object.tweets;
-  res.render("twitter", {
-        account: account,
-        tweets: tweets,
-        title: "Latest Tweets from Search Therapy"
-      }); // end render function
+  return object.tweets;
 } 
 
-async function myTweets() {
+async function myTweets(res,next) {
   var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
   console.log('account = ' + account);
   var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
   console.log('tweets = ' + tweets);
+  res.render("twitter", {
+    account: account,
+    tweets: tweets,
+    title: "Latest Tweets from Search Therapy"
+  }); // end render function
   // return (account,tweets);
   // return res.render("twitter", {
   //     account: account,
