@@ -82,7 +82,7 @@ router.get('/twitter', function(req, res, next){
     }
     var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
     .then(function(err,data,res){
-      res.render('login');
+      // res.render('login');
       console.log('log 2222 ----=======------- router get /twitter');
       res.render("profile", {
         account: account.data,
