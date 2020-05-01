@@ -77,7 +77,7 @@ router.get('/twitter', function(req, res, next){
     // res.render('twitter');
     if (errorMsg === 'twitter-fail') { //If errMsg variable has an error message 
       var error = "Sorry, there are no current Twitter Posts.";
-      return res.render('/', {
+      return res.render('twitter', {
         error: error
       });    
     }
