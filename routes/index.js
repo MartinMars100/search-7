@@ -207,7 +207,7 @@ router.get('/twitter', function(req, res, next){
   var result = myTweets(res, next)
   .then((response) => {
     console.log ('log xxxxxxxxxxxxxxxxxx');
-    return res.render("profile", {
+    res.render("profile", {
         account: accountResult,
         tweets: tweetResult,
         title: "Latest Tweets from Search Therapy"
