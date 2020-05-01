@@ -240,6 +240,11 @@ async function myTweets(res,next) {
 
 router.get('/twitter', function(req, res, next){
   myTweets(res, next)
+  // .exec(function (error,user){
+  .then(function (account,tweets){
+      return res.render('twitter');
+  }) //end exec function
+
   // .res.render('twitter');
   // .catch(e => {
   //   console.log('There has been a problem with your myTweets operation: ' + e.message);
@@ -251,5 +256,13 @@ router.get('/twitter', function(req, res, next){
   //   title: "Latest Tweets from Search Therapy"
   // }); // end render function
 });
+
+// axios.get('https://ghibliapi.herokuapp.com/films')
+//     .then((response) => {
+//         console.log('Successfully retrieved our list of movies');
+//         response.data.forEach(movie => {
+//             console.log(`${movie['title']}, ${movie['release_date']}`);
+//         });
+//     })
 
 module.exports = router;
