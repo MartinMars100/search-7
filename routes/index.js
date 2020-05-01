@@ -69,30 +69,6 @@ router.get('/', mid.setEnv, function(req, res, next){
     });
 });
 
-// router.get('/twitter', function(req, res, next){
-  // // res.render('login');
-  // var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
-  // .then(function(account){
-  //   console.log('log 1111 ************* router get /twitter');
-    // if (errorMsg === 'twitter-fail') { //If errMsg variable has an error message 
-    //   var error = "Sorry, there are no current Twitter Posts.";
-    //   return res.render('profile', {
-    //     error: error
-    //   });    
-    // }
-//     var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
-//     .then(function(account, tweets){
-//       // res.render('login');
-//       console.log('log 2222 ----=======------- router get /twitter');
-//       res.render("profile", {
-//         account: account.data,
-//         tweets: tweets.data,
-//         title: "Latest Tweets from Search Therapy"
-//       }); // end render function
-//     }); // end then
-//   }); // end then
-// });
-
 /* GET login page */
 router.get('/login', function(req, res) {
   res.render('login', { 
@@ -179,17 +155,6 @@ router.post('/register', function(req, res, next) {
    });
 });
 
-//// Twitter Display Functions
-
-// function gotAccountTest(err, data, res, next){  
-//   if (err) {
-//     console.log('log gotAccountTest function err found err = ' + err);
-//     errorMsg = "twitter-fail"; // This will be caught on app.get route
-//   }  
-//   console.log('gotAccountTest after err check');
-
-// } //end function
-
 function gotAccount(err, data, res, next){  // Used for screen name
   console.log('log gotAccount function---------------------')
   if (err) {
@@ -260,14 +225,7 @@ router.get('/twitter', function(req, res, next){
         title: "Latest Tweets from Search Therapy"
       }); // end render function
   }) //end then function
-  // .exec(function (error,user){
-  // .then((response) => {
-  //     return res.render("twitter", {
-  //         account: account,
-  //         tweets: tweets,
-  //         title: "Latest Tweets from Search Therapy"
-  //       }); // end render function
-  // }) //end exec function
+  
 
   // .res.render('twitter');
   // .catch(e => {
