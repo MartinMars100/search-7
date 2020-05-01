@@ -213,6 +213,7 @@ function gotDataTweets(err, data, tweets){  // Our lists of tweets
   // console.log('object.tweets ========== ' + object.tweets);
   tweets = object.tweets;
   // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
+  console.log('tweets ============ ' + tweets);
   return tweets;
 } 
 
