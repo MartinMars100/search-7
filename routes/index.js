@@ -234,8 +234,8 @@ router.get('/twitter', function(req, res, next){
     console.log('There has been a problem with your myTweets operation: ' + e.message);
   } )
   .res.render("twitter", {
-    account: account.data,
-    tweets: tweets.data,
+    account: account,
+    tweets: tweets,
     title: "Latest Tweets from Search Therapy"
   }); // end render function
 });
