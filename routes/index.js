@@ -203,7 +203,7 @@ function gotAccount(err, data, res, next){  // Used for screen name
   return object.account;
 }
     
-function gotDataTweets(err, data, response){  // Our lists of tweets
+function gotDataTweets(err, data, tweets){  // Our lists of tweets
   if (err) {
     console.log('log err found!!!!!!!!! gotDataTweets Function');
     errorMsg = "twitter-fail"; // This will be caught on app.get route
@@ -213,7 +213,7 @@ function gotDataTweets(err, data, response){  // Our lists of tweets
   // console.log('object.tweets ========== ' + object.tweets);
   tweets = object.tweets;
   // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
-  return object.tweets;
+  return tweets;
 } 
 
 module.exports = router;
