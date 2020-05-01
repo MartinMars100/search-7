@@ -81,7 +81,7 @@ router.get('/twitter', function(req, res, next){
       });    
     }
     var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
-    .then(function(tweets){
+    .then(function(err,data,res){
       res.render('login');
       console.log('log 2222 ----=======------- router get /twitter');
       res.render("profile", {
@@ -213,8 +213,8 @@ function gotDataTweets(err, data, tweets){  // Our lists of tweets
   // console.log('object.tweets ========== ' + object.tweets);
   tweets = object.tweets;
   // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
-  console.log('tweets ============ ' + tweets);
-  return tweets;
+  // console.log('tweets ============ ' + tweets);
+  return object.tweets;
 } 
 
 module.exports = router;
