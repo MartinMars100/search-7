@@ -155,34 +155,34 @@ router.post('/register', function(req, res, next) {
    });
 });
 
-function gotAccount(err, data, res, next){  // Used for screen name
-  console.log('log gotAccount function---------------------')
-  if (err) {
-    console.log('log error in gotAccount function.');
-    errorMsg = "twitter-fail"; // This will be caught on app.get route
-  }  
-  console.log(' log 2 in gotAccount function -------------');
-  object.account = data;
-  console.log('object.accont = ' + object.account);
-  console.log('object.account.screen_name = ' + object.account.screen_name);
-  return object.account;
-}
+// function gotAccount(err, data, res, next){  // Used for screen name
+//   console.log('log gotAccount function---------------------')
+//   if (err) {
+//     console.log('log error in gotAccount function.');
+//     errorMsg = "twitter-fail"; // This will be caught on app.get route
+//   }  
+//   console.log(' log 2 in gotAccount function -------------');
+//   object.account = data;
+//   console.log('object.accont = ' + object.account);
+//   console.log('object.account.screen_name = ' + object.account.screen_name);
+//   return object.account;
+// }
     
-function gotDataTweets(err, data, res, next){  // Our lists of tweets
-  if (err) {
-    console.log('log err found!!!!!!!!! gotDataTweets Function');
-    errorMsg = "twitter-fail"; // This will be caught on app.get route
-  } 
-  console.log('log err after err check gotDataTweets Function');
-  object.tweets = data;   // load tweets to object   
-  // console.log('object.tweets ========== ' + object.tweets);
-  tweets = object.tweets;
-  // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
-  // console.log('tweets ============ ' + tweets);
-  console.log('object.tweets = ' + object.tweets);
-  console.log('object.tweets.length = ' + object.tweets.length);
-  return object.tweets;
-} 
+// function gotDataTweets(err, data, res, next){  // Our lists of tweets
+//   if (err) {
+//     console.log('log err found!!!!!!!!! gotDataTweets Function');
+//     errorMsg = "twitter-fail"; // This will be caught on app.get route
+//   } 
+//   console.log('log err after err check gotDataTweets Function');
+//   object.tweets = data;   // load tweets to object   
+//   // console.log('object.tweets ========== ' + object.tweets);
+//   tweets = object.tweets;
+//   // console.log('tweets[0].tweet.text = ' + tweets[0].tweet.text);
+//   // console.log('tweets ============ ' + tweets);
+//   console.log('object.tweets = ' + object.tweets);
+//   console.log('object.tweets.length = ' + object.tweets.length);
+//   return object.tweets;
+// } 
 
 // async function myTweets(res,next) {
 //   try {
@@ -227,22 +227,22 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
 //     title: "Latest Tweets from Search Therapy"
 //   }); // end render function
 
-router.get('/twitter', async (req, res, next) => {
-  try {
-    let account =  await T.get('account/settings', params, gotAccount)
-    let tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
-    res.render("profile");
-  } catch (err) {
-      console.log ('log error in router get t.get statuses')
-      res.render("errors");
-  }
-  try {
-    let tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
-    res.render("profile");
-  } catch (err) {
-      console.log ('log error in router get t.get statuses')
-      res.render("errors");
-  }
-}); // end router get
+// router.get('/twitter', async (req, res, next) => {
+//   try {
+//     let account =  await T.get('account/settings', params, gotAccount)
+//     let tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
+//     res.render("profile");
+//   } catch (err) {
+//       console.log ('log error in router get t.get statuses')
+//       res.render("errors");
+//   }
+//   try {
+//     let tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
+//     res.render("profile");
+//   } catch (err) {
+//       console.log ('log error in router get t.get statuses')
+//       res.render("errors");
+//   }
+// }); // end router get
 
 module.exports = router;
