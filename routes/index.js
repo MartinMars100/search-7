@@ -222,7 +222,7 @@ function gotDataTweets(err, data, res, next){  // Our lists of tweets
 async function myTweets() {
   var account = T.get('account/settings', params, gotAccount) //This retrieves hd screenname
   console.log('account = ' + account);
-  var tweets = await T.get('statuses/user_timeline', params, gotDataTweets)
+  var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
   console.log('tweets = ' + tweets);
   return (account,tweets);
 }
@@ -233,11 +233,12 @@ router.get('/twitter', function(req, res, next){
   .catch(e => {
     console.log('There has been a problem with your myTweets operation: ' + e.message);
   } )
-  .res.render("twitter", {
-    account: account,
-    tweets: tweets,
-    title: "Latest Tweets from Search Therapy"
-  }); // end render function
+  render('twitter');
+  // .res.render("twitter", {
+  //   account: account,
+  //   tweets: tweets,
+  //   title: "Latest Tweets from Search Therapy"
+  // }); // end render function
 });
 
 module.exports = router;
