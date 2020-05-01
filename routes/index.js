@@ -205,8 +205,10 @@ function gotAccount(err, data, res, next){  // Used for screen name
     
 function gotDataTweets(err, data, response){  // Our lists of tweets
   if (err) {
+    console.log('log err found!!!!!!!!! gotDataTweets Function');
     errorMsg = "twitter-fail"; // This will be caught on app.get route
   } 
+  console.log('log err after err check gotDataTweets Function');
   object.tweets = data;   // load tweets to object   
   console.log('object.tweets ========== ' + object.tweets);
   tweets = object.tweets;
