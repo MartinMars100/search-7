@@ -224,7 +224,6 @@ async function myTweets(res,next) {
   console.log('account = ' + account);
   var tweets = T.get('statuses/user_timeline', params, gotDataTweets)
   console.log('tweets = ' + tweets);
-  return(account,tweets);  
 
   try {
     let response = await fetch('/no-user-here');
@@ -233,6 +232,8 @@ async function myTweets(res,next) {
     // catches errors both in fetch and response.json
     alert(err);
   }
+
+  return(account,tweets);  
 }
   // .exec((response) => {
   //       return res.render("twitter", {
