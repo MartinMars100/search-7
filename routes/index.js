@@ -242,7 +242,11 @@ router.get('/twitter', function(req, res, next){
   myTweets(res, next)
   // .exec(function (error,user){
   .then(function (account,tweets){
-      return res.render('twitter');
+      return res.render("twitter", {
+          account: account,
+          tweets: tweets,
+          title: "Latest Tweets from Search Therapy"
+        }); // end render function
   }) //end exec function
 
   // .res.render('twitter');
